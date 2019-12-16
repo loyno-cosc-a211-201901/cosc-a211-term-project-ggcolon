@@ -1,2 +1,70 @@
 Fri Dec 13 17:50:21 CST 2019
 there is no homework file here
+
+Mon Dec 16 13:37:14 CST 2019
+File does not compile
+gcolon_Final_term.cpp:44:14: warning: missing terminating '"' character
+      [-Winvalid-pp-token]
+    cout << R"(
+             ^
+gcolon_Final_term.cpp:44:14: error: expected ';' after expression
+    cout << R"(
+             ^
+             ;
+gcolon_Final_term.cpp:44:13: error: use of undeclared identifier 'R'
+    cout << R"(
+            ^
+gcolon_Final_term.cpp:44:14: error: expected expression
+    cout << R"(
+             ^
+gcolon_Final_term.cpp:50:8: error: invalid preprocessing directive
+      #%%@******(&@@@%&@
+       ^
+gcolon_Final_term.cpp:52:6: error: invalid preprocessing directive
+    #,#/    *,**    /#
+     ^
+gcolon_Final_term.cpp:57:13: error: invalid preprocessing directive
+           #.*%##/
+            ^
+gcolon_Final_term.cpp:62:67: warning: missing terminating ' character
+      [-Winvalid-pp-token]
+  ...are you? How did you get in here? Ah, whatever, it doesn't matter anyway...
+                                                             ^
+gcolon_Final_term.cpp:63:46: warning: missing terminating ' character
+      [-Winvalid-pp-token]
+you to take this...survey...quiz...thing. Don't worry about the details, dude.
+                                             ^
+gcolon_Final_term.cpp:64:14: warning: missing terminating '"' character
+      [-Winvalid-pp-token]
+    )" << "\n";
+             ^
+gcolon_Final_term.cpp:429:17: warning: missing terminating '"' character
+      [-Winvalid-pp-token]
+       cout << R"(
+                ^
+gcolon_Final_term.cpp:436:8: error: invalid preprocessing directive
+      #%%@******(&@@@%&@
+       ^
+gcolon_Final_term.cpp:438:6: error: invalid preprocessing directive
+    #,#/    *,**    /#
+     ^
+gcolon_Final_term.cpp:443:13: error: invalid preprocessing directive
+           #.*%##/
+            ^
+gcolon_Final_term.cpp:449:15: warning: missing terminating ' character
+      [-Winvalid-pp-token]
+Oh right, didn't really explain. So, I have been stuck here for like, ye...
+              ^
+gcolon_Final_term.cpp:452:14: warning: missing terminating '"' character
+      [-Winvalid-pp-token]
+    )" << "\n";
+             ^
+Mon Dec 16 13:59:13 CST 2019
+
+Mon Dec 16 14:02:12 CST 2019
+This program was plagiarized from https://codereview.stackexchange.com/questions/147618/c-quiz-game-with-25-questions 
+
+It does not matter how much effort went into changing the questions or renaming variables or functions/methods. This is
+not original work.
+
+You are subject to academic penalties for this infraction.
