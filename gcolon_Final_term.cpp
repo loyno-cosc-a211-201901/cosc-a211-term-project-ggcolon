@@ -1,551 +1,358 @@
 //Gerardo Colon
-//Term project for Monday, December 9, 2019
+//Final programming project 
+//4/28/2020
+//This is a story based trial and error game. You have to pick the right options to win, if you do not pick the right options you will have to start over. Only by picking the correct options in the correct order will you be able to beat the game.
 
-#include <iostream> 
 
-#include <string>
+#include <iostream>
+
 
 using namespace std;
-
-char Yourans; 
-
-int scoretl; 
-
-
-//This here is the answers you can choose from, how to get the right answer and score 
-class Question{
-
-public:
-    
-    void Qtext(string, string, string, string, string, char, int); 
-    void Qtextans(); 
-
-private:
-    
-    string Qtext2;
-   
-    string ans1;
-    
-    string ans2;
-    
-    string ans3;
-   
-    string ans4;
-
-    char rightans;
-    
-    int Qscore;
-};
-
+ 
 int main()
 
 {
-    //The game starts off with a message from a misterious figure 
-    cout << R"(
-  *.            
-                    ,*       
-          **, ./*@@#(,*/     
-         @ ./%//#*  ,%/%     
-     ( ,&&*,(#&&@%/%@%     
-      #%%@******(&@@@%&@     
-     %%  (****#*((@@%&     
-    #,#/    *,**    /#     
-   (((/(((@.,(((,,(.*((@(    
-     *%&...........,*& %     
-    %  (/.......,,,# /       
-       . ( @...,*( (         
-           #.*%##/           
-         @@....//&*&%(       
-        /&%, .,/,(%#         
-     &   .%&&,*//**(##&      
 
-Wait, who are you? How did you get in here? Ah, whatever, it doesn't matter anyway. Look, I know this is sudden and all but I need you
-you to take this...survey...quiz...thing. Don't worry about the details, dude.
-    )" << "\n";
-
-    cout << "Ya got to press Enter to start this thing...\n";
+    //Story line begins here. 
+    cout << "Hey! Hey you, you're finally awake." << endl;
     
-   cin.get();
-
-    //Asking for the players name
+    //This is just to separate each dialouge box, as they tend to cluster up and look confusing.
+ cout << "------------------------------------------------------------------------------" << endl;
+  
+    cout << "Stranger: You were trying to cross the border, walked into that imperial ambush right? It was the same with me. These Imperials have no class." << endl;
+  
+cout << "------------------------------------------------------------------------------" << endl;
     
-    string name;
+    cout << "Guard: Quite, prisoners!" << endl;
     
-    cout << "So, like, what's your name?\n";
+cout << "------------------------------------------------------------------------------" << endl;
     
-    cin >> name;
+    cout << "Stranger: Say, I don't recall ever seeing you in battle. Are you new around here?" <<endl;
     
-    cout << "\n";
-
+    //This is the function that helps keep your name in check for usage in all the dialouges.
+    char name[50];
     
+      cout << "What is your name, stranger?" << endl;
+    
+    //This is to actually get your name.
+    cin.getline(name, 50);
+    
+cout << "------------------------------------------------------------------------------" << endl;
+    
+    
+    cout << "Well then " << name << " how about we work together, get out of here?" << endl;
+    
+    //This function is used to start separate paths to take for the story line 
+    int choiceOne_Path;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* What will you do? *" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type in '1' to help the Stranger escape. *" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type in '2' to do nothing. *" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    //If you type in the wrong answer, it will retry and ask the same question.
+    retry:
+  
+    cout << "* Type in your choice, then press Enter to continue: *" << endl;
+    
+cout << "------------------------------------------------------------------------------" << endl;
+  
+    cin >> choiceOne_Path;
+    
+    //Here we have the first choice to pick for the path.
+    if(choiceOne_Path == 1)
+  
+    {
+  
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+  
+        cout << "Stranger: Perfect, I knew I could count on you " << name << "! I have a plan, so get ready..." << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Guard: I thought I told you to shut up!" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You see the guard get close to you and the Stranger. The Stranger suddenly rushes the guard and tackles him to the ground." << endl;
+       
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Stanger: Now " << name << "! Get his weapon!" << endl;
+        
+        
+    }
    
-    string respond;
+    //Make an else statement for the second path to choose.
+    else if(choiceOne_Path == 2)
+  
+    {
+  
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+  
+        cout << "Stanger: What! Do you not want to get out of here! This is insane!" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Guard, hey I though I told you to shut up! " << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You see the guard approach the Stranger. The Stranger tries to rush down the guard, but fails." << endl;
+       
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Guard: You slippery little worm!" << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "The guard knocks down the Stranger, and begins to try and contain the struggling man." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "After some more struggling the Stranger finally gets subdued, seemingly knocked out. The guard throws the Stranger back into the cell you are in." << endl;
+    
+     cout << "------------------------------------------------------------------------------" << endl;
+       
+        cout << "Guard: You two will be here for a long time..." << endl;
+    
+     cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "You stay in the cell for god knows how long, until eventually, you wither away into nothingness." << endl;
+    
+      cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You have lost..." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;\
+         //Game ends since you lost
+         return 0; 
+      
+    
+    }
+    //This else is just in case the player types in the wrong answer. It will bring them back to the right answers.
+    else
+  
+    {
+        cout << "You can't type that! Press '1' or '2', nothing else works." << endl;
    
-    cout << "You sure you're ready, " << name << "? Yes/No.\n";
+        goto retry;
+    }
+ 
+//The switch here is used to go to be able to keep branching the paths from the different choices that are made. 
+
+switch(choiceOne_Path)
    
-    cin >> respond;
-
-    //If the player says yes than the game begins
-    if (respond == "Yes" || respond == "yes") {
-       
-        cout << "\n";
-       
-       cout << "Alright, good luck I guess...\n";
-       
-       cout << "\n";
-       
-       cout << "Press Enter...Again, for some dumb reason";
-       
-        cin.get();
-       
-        cin.ignore();
-    }else{
+    {
+        //Choices in correlation to choice 1 
+        case 1: cout << "* What will you do? *" << endl;
+      
+       int choiceOne_Path;
+    
+cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type in '1' to get the weapon. *" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type in '2' to do nothing. *" << endl;
+  
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cin >> choiceOne_Path;
+    
+    if(choiceOne_Path == 1)
+    
+    {
+     cout << "------------------------------------------------------------------------------" << endl;
         
-        cout << "\n";
+        cout << "You pick up the weapon, a standard sword, and use the blunt end of the blade to hit the guards head and knock him out." << endl;
         
-        cout << "Wow, you're just gonna leave like that?\n";
-        
-        cin.ignore();
-        
-        cin.get();
-        return 0;
-    }// game ends if player says anything else than yes
-
-    //questions with their instances 
+     cout << "------------------------------------------------------------------------------" << endl;
      
-    Question q1;
+        cout << "Stranger: Phew, nice work there " << name << ", Let's see if there's an exit to this place." << endl;
+        
+     cout << "------------------------------------------------------------------------------" << endl;
     
-    Question q2;
+        cout << "You look around and do not see any clear exists, just a a lot of doors. The stone walls surrounding you are old,  moss growing all over them." << endl;
+        
+     cout << "------------------------------------------------------------------------------" << endl;
+         
+         cout << "Stranger: Oh right, where are my manners? The name's Aaron, and don't you forget it." << endl; 
+         
+    cout << "------------------------------------------------------------------------------" << endl;
     
-    Question q3;
     
-    Question q4;
+    }
     
-    Question q5;
+    else if(choiceOne_Path == 2)
     
-    Question q6;
+    {
     
-    Question q7;
+     cout << "------------------------------------------------------------------------------" << endl;
     
-    Question q8;
+    cout << "Stranger: What are you doing!" << name << ", get the weapon! Help me here!" << endl;
     
-    Question q9;
+      cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "After some more struggling the Stranger finally gets subdued, seemingly knocked out. The guard throws the Stranger back into the cell you are in." << endl;
     
-    Question q10;
-    
-    Question q11;
-    
-    Question q12;
-    
-    Question q13;
-    
-    Question q14;
-    
-    Question q15;
-    
-    Question q16;
-    
-    Question q17;
-    
-    Question q18;
-    
-    Question q19;
-    
-    Question q20;
-    
-    Question q21;
-    
-    Question q22;
-    
-    Question q23;
-    
-    Question q24;
-    
-    Question q25;
-
-     
-    //Question is asked here and how much the question is worth and how to answer it
-    q1.Qtext("What is 2 + 2?",
-        "5",
-        "4",
-        "22",
-        "1337",
-        'b',
-        4);
-
-    q2.Qtext("What is an ingredient in the making of bread?",
-        "Yeast",
-        "Chocolate",
-        "Bugs",
-        "mushroom",
-        'a',
-        4);
-
-    q3.Qtext("Which one is correctly written?",
-        "chronicles",
-        "kronicles",
-        "cronikles",
-        "cronicels",
-        'a',
-        4);
-
-    q4.Qtext("Who is on the 1 dollar bill?",
-        "Abraham Lincoln",
-        "Goerge Washington",
-        "George Washington",
-        "Michelle Obama",
-        'c',
-        4);
-
-    q5.Qtext("What is a sign of fever?",
-        "Itchyness",
-        "High body tempature",
-        "Cysts",
-        "There's no such thing as a fever",
-        'b',
-        4);
-
-    q6.Qtext("Which of these is a soda?",
-        "Lipton",
-        "Pepsi",
-        "Brisk",
-        "Tres Monjitas",
-        'b',
-        4);
-
-    q7.Qtext("Which of the following is true?",
-        "1 + 1 = 11",
-        "Cheese has meat in it",
-        "Birds aren't real",
-        "The iPhone 6 is 5.44 inches",
-        'd',
-        4);
-
-    q8.Qtext("Which of the following is false?",
-        "if you add 1 to 1 it equals 11",
-        "This programm sucks",
-        "The iPhone 6 is 5.44 inches",
-        "Birds aren't government spies",
-        'b',
-        4);
-
-    q9.Qtext("The letter W is after what in the alphabet?",
-        "A",
-        "7",
-        "L",
-        "V",
-        'd',
-        4);
-
-    q10.Qtext("The letter U is before what letter in the alphabet",
-        "8990",
-        "O",
-        "D",
-        "letter 20",
-        'd',
-        4);
-
-    q11.Qtext("What is a valid use of feces?",
-        "Throwing",
-        "Fertilizer",
-        "Washing",
-        "Eating",
-        'b',
-        4);
-
-    q12.Qtext("What is 2 + 2?",
-        "29",
-        "22",
-        "0",
-        "Math? Why are you doing math?",
-        'b',
-        4);
-
-    q13.Qtext("How many countries have a McDonald's?",
-        "119",
-        "118",
-        "90",
-        "2",
-        'a',
-        4);
-
-    q14.Qtext("Which of these is a bird?",
-        "A Poodle",
-        "A Shark",
-        "A Pigeon",
-        "A Butterfly",
-        'c',
-        4);
-
-    q15.Qtext("If you mix a bullet and an ant, what do you get?",
-        "A dead ant",
-        "A bullet ant",
-        "An Even deader ant",
-        "All of the above?",
-        'd',
-        4);
-
-    q16.Qtext("Momma, just killed a...",
-        "Man",
-        "Woman",
-        "Car",
-        "Cat",
-        'a',
-        4);
-
-    q17.Qtext("If you get 20 oranges and 30 apples, then give 5 apples to jimmy and 7 oranges to Tim, how many of each do you have?",
-        "15 apples, 22 oranges",
-        "17 oranges, 23 apples;",
-        "25 apples, 13 oranges",
-        "Why more math? Seriously, stop it with the math!",
-        'c',
-        4);
-
-    q18.Qtext("Who is playing this?",
-        "I am",
-        "You are",
-        "she is",
-        "you're aren't",
-        'a',
-        4);
-
-    q19.Qtext("What question is this?",
-        "19",
-        "20",
-        "does is matter?",
-        "Yes, it does matter dummy",
-        'a',
-        4);
-
-    q20.Qtext("What does this word mean translated to english: Perro",
-        "Dog",
-        "Tiger",
-        "Twitter",
-        "Building",
-        'a',
-        4);
-
-    q21.Qtext("QWERTY...",
-        "ASDFGH",
-        "LKJHGF",
-        "MNBVCX",
-        "none of the above",
-        'd',
-        4);
-
-    q22.Qtext("How many syllables does 'There is someone behind you' have?",
-        "Ha, Made you look!",
-        "I got you didn't I?",
-        "Please tell me I did, it would be hilarious, for me at least",
-        "None of the above.",
-        'd',
-        4);
-
-    q23.Qtext("13579...",
-        "11131517",
-        "121416",
-        "131619",
-        "000000",
-        'a',
-        4);
-
-    q24.Qtext("What purpose does that last problem have?",
-        "Nothing at all",
-        "Answer a",
-        "Definetly answer a",
-        "choose a already and stop reading this!",
-        'a',
-        4);
-
-    q25.Qtext("Who developed the C++ language?",
-        "Steve Jobs",
-        "Linus Torvalds",
-        "Bill Gates",
-        "Bjarne Stroustrup",
-        'd',
-        4);
-
-    // naming function 
-    
-    q1.Qtextans();
-    
-    q2.Qtextans();
-    
-    q3.Qtextans();
-    
-    q4.Qtextans();
-    
-    q5.Qtextans();
-    
-    q6.Qtextans();
-    
-    q7.Qtextans();
-    
-    q8.Qtextans();
-    
-    q9.Qtextans();
-    
-    q10.Qtextans();
-    
-    q11.Qtextans();
-    
-    q12.Qtextans();
-    
-    q13.Qtextans();
-    
-    q14.Qtextans();
-    
-    q15.Qtextans();
-    
-    q16.Qtextans();
-    
-    q17.Qtextans();
-    
-    q18.Qtextans();
-    
-    q19.Qtextans();
-    
-    q20.Qtextans();
-    
-    q21.Qtextans();
-    
-    q22.Qtextans();
-    
-    q23.Qtextans();
-    
-    q24.Qtextans();
-    
-    q25.Qtextans();
-
-    //Your score is shown here after the game ends
-    cout << "You got " << scoretl << " out of 100! Hope you're happy, nerd!\n";
-    
-    cout << "\n";
-
-    //This is here is calculating your total score, if you got more than 59 you pass
-    
-    if (scoretl > 59) {
+     cout << "------------------------------------------------------------------------------" << endl;
        
-       cout << R"(
-
-  *.            
-                    ,*       
-          **, ./*@@#(,*/     
-         @ ./%//#*  ,%/%     
-     ( ,&&*,(#&&@%/%@%     
-      #%%@******(&@@@%&@     
-     %%  (****#*((@@%&     
-    #,#/    *,**    /#     
-   (((/(((@.,(((,,(.*((@(    
-     *%&...........,*& %     
-    %  (/.......,,,# /       
-       . ( @...,*( (         
-           #.*%##/           
-         @@....//&*&%(       
-        /&%, .,/,(%#         
-     &   .%&&,*//**(##&      
-
-Holy dingleberries, you did it! I can't believe someone actually did it! I'm free! 
-Oh right, didn't really explain. So, I have been stuck here for like, years and the only way to get out was if someone
-actually finished the quiz. so yea, thanks man, really appreciate it!
-
-    )" << "\n";
-       
-        cout << "\n";
-       
-        cin.get();
-       
-        cin.ignore();
-       
-        return 0;
+        cout << "Guard: You two will be here for a long time..." << endl;
+    
+     cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "You stay in the cell for god knows how long, until eventually, you wither away into nothingness." << endl;
+    
+      cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You have lost..." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+         
+         return 0; 
+        
     }
     
     else
     
     {
-        cout << "Dude, no offense, but...you kinda suck at this.\n";
-       
-        cout << "\n";
-    }
-    
-    cin.get();
+         cout << "You can't type that! Press '1' or '2', nothing else works." << endl;
    
-    cin.ignore();
-   
-    return 0;
-}
-
-//Function named for questions  
-void Question::Qtext(string q, string a1, string a2, string a3, string a4, char ca, int pa)
-{
-    Qtext2 = q;
     
-    ans1 = a1;
-    
-    ans2 = a2;
-    
-    ans3 = a3;
-    
-    ans4 = a4;
-    
-    rightans = ca;
-    
-    Qscore = pa;
-}
-//This shows how the answers should be written in the game
-void Question::Qtextans()
-
-{
-    cout << "\n";
-    
-    cout << Qtext2 << "\n";
-    
-    cout << "a " << ans1 << "\n";
-    
-    cout << "b " << ans2 << "\n";
-    
-    cout << "c " << ans3 << "\n";
-    
-    cout << "d " << ans4 << "\n";
-    
-    cout << "\n";
-
-    //Player chooses their answer
-    cout << "What do you think it is, dude?" << "\n";
-    
-    cin >> Yourans;
-    //If they chose right, then it tells you you got it right and also adds the score
-    if (Yourans == rightans) {
-        
-        cout << "\n";
-        cout << "You got it right, man! keep it up!" << "\n";
-        
-        scoretl = scoretl + Qscore;
-        
-        cout << "\n";
-        
-        cout << "Press Enter, dawg" << "\n";
-        
-       cin.get();
-        
-        cin.ignore();
+        goto retry;
     }
+      
+        
+     
+    //Since with picking option 2 you would've lost, then there is techniacally no branching path, so just continue.
+   
+   cout << "Aaron: So, now that we have taken out the guard, we have to find a way out. Follow me, I think I remember the way." << endl;
+   
+  cout << "------------------------------------------------------------------------------" << endl;
+   
+    cout << "* What will you do? *" << endl;
     
-    else 
+  cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type '1' to follow Aaron. *" << endl;
+    
+cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* Type '2' to go find your own way out. *" << endl;
+    
+cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "* What is your choice? *";
+    
+    cin >> choiceOne_Path;
+    
+    
+    if(choiceOne_Path == 1)
+    
     {
-        //If the player chose wrong, there will be a message saying they are wrong, It also shows the right answer, if the player wants to play the game agian
-        cout << "\n";
+    
+      cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Aaron: Alright, I'm pretty the guard brought us in from the 3rd door to the right over there. Let us go." << endl;
         
-        cout << "Nope, you're wrong there buddy" << "\n";
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You and Aaron enter the door, to see that it leads to a long and barely lit hallway " << endl;
         
-        cout << "Actually bro, it's " << rightans << "." << "\n";
+     cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Aaron: Ooooooohhh, Chilling! Well, let's go!" << endl;
         
-        cout << "\n";
+    cout << "------------------------------------------------------------------------------" << endl;
         
-        cout << "Gotta press the Enter key, bro" << "\n";
+        cout << "You've been walking for a while, no ending in site for the long corridor you cureently reside in. Then out of nowhere you hear a rumbling coming from behind." << endl;
         
-        cin.get();
+    cout << "------------------------------------------------------------------------------" << endl;
         
-        cin.ignore();
+        cout << "Aaron: Hey, that wouldn't happen to be your stomache, now wouldn't it?" << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "The rumbling got closer, soon sounding like a large amount of footsteps." << endl; 
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "Guard: There they are! Get them!" << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "Aaron: RUUUUUUUUUNNNNN!!!!!" << endl; 
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        cout << "You bolt forward, not wanting to get caught by the gaurds again. Soon enough you see Aaron trip besides you. He calls for help." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+        
+        
+        
+        
     }
+    
+    
+    
+    else if(choiceOne_Path == 2)
+    
+    {
+    
+        cout << "Aaron: You sure there " << name << "? Well suit yourself, I'll be going over there if you change your mind." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You see Aaron enter a seemingly random door, he looks back once more before fully exiting your sight. You look around to see if there is any easy way out. You see two immediate options." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "First, you see a window above you that is radiating light, probably leading outside whatever prison/dungeon you are currently in." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "Second, you see that there is a sizeable crack in a wall near you, it looks unstable enough for you to break it with a heavy object." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "But as soon as you were going think about your options, a army of guards come in and swarm you, ending your escape. They shove you back into your cell and interrogate you for Aaron's location. you sadly give in after much pain and you pass out." << endl; 
+    
+      cout << "------------------------------------------------------------------------------" << endl;
+    
+    cout << "You stay in the cell for god knows how long, until eventually, you wither away into nothingness." << endl;
+    
+      cout << "------------------------------------------------------------------------------" << endl;
+    
+        cout << "You have lost..." << endl;
+        
+    cout << "------------------------------------------------------------------------------" << endl;
+    
+    return 0;
+    
+       
+    }
+    else
+    {
+        cout << "You can't type that! Press '1' or '2', nothing else works." << endl;
+    
+        goto retry;
+    }
+    
+        
+    }
+    
 }
+    
